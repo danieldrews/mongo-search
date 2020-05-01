@@ -1,10 +1,11 @@
 const express = require('express');
+const { port, mongoUri } = require('./config');
 const app = express();
 
 app.get('/', (req, res) => {
   res.send('Hell-o World');
 });
 
-app.listen(8000, () => {
-  console.log('listening por 8000');
+var listener = app.listen(port || 3000, () => {
+  console.log('Your app is listening on port:', listener.address().port);
 });
