@@ -1,0 +1,31 @@
+{
+  "name": "mongo-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieldrews/mongo-search.git"
+  },
+  "author": "daniel.drews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieldrews/mongo-search/issues"
+  },
+  "homepage": "https://github.com/danieldrews/mongo-search#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.11",
+    "shortid": "^2.2.15"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
