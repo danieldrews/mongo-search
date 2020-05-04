@@ -7,6 +7,7 @@ const NAME = 'user';
 
 const userSchema = new Schema({
   createdAt: {type: Date, default: Date.now},
+  updatedAt: {type: Date, default: Date.now},
   name: String,
   email: String,
 });
@@ -19,3 +20,25 @@ exports.create = (user, next) => {
   const nextUser = new User(user);
   return nextUser.save(next);
 };
+
+exports.update = (userId, user, next) => {
+  User.findById(userId, (err, dbUser) => {
+    if (err) {
+      next(err);
+      return;
+    }
+
+    for (const prop in user) {
+      if (user.hasOwnProperty(prop)) {
+        dbUser[prop] = user[prop];
+      }
+    }
+
+    dbUser.updatedAt = Date.now();
+
+    dbUser.save((err) => {
+      next(err ? err : undefined);
+    });
+  });
+};
+

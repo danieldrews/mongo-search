@@ -5,3 +5,10 @@ exports.insert = (req, res) => {
     res.status(201).json({id: user._id});
   });
 };
+
+exports.update = (req, res) => {
+  UserModel.update(req.params.userId, req.body, (err) => {
+    res.status(204).json({});
+  });
+};
+
