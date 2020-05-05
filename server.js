@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const {port} = require('./env.config');
 const mongoDB = require('./src/common/services/mongoose');
 
 const app = express();
 
+app.use(helmet());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
