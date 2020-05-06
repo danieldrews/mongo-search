@@ -10,4 +10,8 @@ exports.routesConfig = (app) => {
   app.put(basePath + '/:userId', [
     UserController.update,
   ]);
+
+  app.delete(basePath + '/:userId', [
+    UserController.removeById,
+  ]);
 };

@@ -12,3 +12,8 @@ exports.update = (req, res) => {
   });
 };
 
+exports.removeById = (req, res) => {
+  UserModel.removeById(req.params.userId, (err) => {
+    res.status(204).json({});
+  });
+};

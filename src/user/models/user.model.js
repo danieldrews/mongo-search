@@ -42,3 +42,6 @@ exports.update = (userId, user, next) => {
   });
 };
 
+exports.removeById = (userId, next) => {
+  User.deleteOne({_id: userId}, (err) => next(err));
+};
