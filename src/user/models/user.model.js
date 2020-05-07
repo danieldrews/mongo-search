@@ -45,3 +45,18 @@ exports.update = (userId, user, next) => {
 exports.removeById = (userId, next) => {
   User.deleteOne({_id: userId}, (err) => next(err));
 };
+
+exports.list = (limit, skip, next) => {
+  const query = User.find();
+
+  if (limit) {
+    query.limit(limit);
+  }
+
+  if (skip) {
+    query.skip(skip);
+  }
+
+  query.exec(next);
+};
+

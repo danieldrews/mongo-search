@@ -14,4 +14,8 @@ exports.routesConfig = (app) => {
   app.delete(basePath + '/:userId', [
     UserController.removeById,
   ]);
+
+  app.get(basePath, [
+    UserController.list,
+  ]);
 };

@@ -17,3 +17,12 @@ exports.removeById = (req, res) => {
     res.status(204).json({});
   });
 };
+
+exports.list = (req, res) => {
+  const limit = req.query.limit? parseInt(req.query.limit): undefined;
+  const skip = req.query.skip? parseInt(req.query.skip): undefined;
+  UserModel.list(limit, skip, (err, data) => {
+    res.status(200).json(data);
+  });
+};
+
